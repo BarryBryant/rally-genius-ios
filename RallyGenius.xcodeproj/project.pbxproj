@@ -19,6 +19,8 @@
 		276863D81E8ACE0F006C8483 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D71E8ACE0F006C8483 /* JSON.swift */; };
 		276863DA1E8AD040006C8483 /* SignsSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D91E8AD040006C8483 /* SignsSerialization.swift */; };
 		276863DC1E8AD187006C8483 /* RallyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863DB1E8AD187006C8483 /* RallyError.swift */; };
+		276863E01E8AD22F006C8483 /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863DF1E8AD22F006C8483 /* SignRepository.swift */; };
+		276863E21E8AD3B0006C8483 /* rally-genius.json in Resources */ = {isa = PBXBuildFile; fileRef = 276863E11E8AD3B0006C8483 /* rally-genius.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		276863D71E8ACE0F006C8483 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		276863D91E8AD040006C8483 /* SignsSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignsSerialization.swift; sourceTree = "<group>"; };
 		276863DB1E8AD187006C8483 /* RallyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RallyError.swift; sourceTree = "<group>"; };
+		276863DF1E8AD22F006C8483 /* SignRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
+		276863E11E8AD3B0006C8483 /* rally-genius.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rally-genius.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,15 +112,14 @@
 		276863A11E870824006C8483 /* RallyGenius */ = {
 			isa = PBXGroup;
 			children = (
-				276863D71E8ACE0F006C8483 /* JSON.swift */,
+				276863E11E8AD3B0006C8483 /* rally-genius.json */,
+				276863DE1E8AD215006C8483 /* Model */,
+				276863DD1E8AD202006C8483 /* Data */,
 				276863A21E870824006C8483 /* AppDelegate.swift */,
 				276863A41E870824006C8483 /* ViewController.swift */,
 				276863A61E870824006C8483 /* Main.storyboard */,
 				276863AB1E870824006C8483 /* LaunchScreen.storyboard */,
 				276863AE1E870824006C8483 /* Info.plist */,
-				276863D31E8ACCE0006C8483 /* Sign.swift */,
-				276863D51E8ACD3B006C8483 /* SignSerialization.swift */,
-				276863D91E8AD040006C8483 /* SignsSerialization.swift */,
 				276863DB1E8AD187006C8483 /* RallyError.swift */,
 			);
 			path = RallyGenius;
@@ -138,6 +141,25 @@
 				276863C41E870824006C8483 /* Info.plist */,
 			);
 			path = RallyGeniusUITests;
+			sourceTree = "<group>";
+		};
+		276863DD1E8AD202006C8483 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				276863D91E8AD040006C8483 /* SignsSerialization.swift */,
+				276863D51E8ACD3B006C8483 /* SignSerialization.swift */,
+				276863D71E8ACE0F006C8483 /* JSON.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		276863DE1E8AD215006C8483 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				276863D31E8ACCE0006C8483 /* Sign.swift */,
+				276863DF1E8AD22F006C8483 /* SignRepository.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276863AD1E870824006C8483 /* LaunchScreen.storyboard in Resources */,
+				276863E21E8AD3B0006C8483 /* rally-genius.json in Resources */,
 				276863D11E89F3CD006C8483 /* Assets.xcassets in Resources */,
 				276863A81E870824006C8483 /* Main.storyboard in Resources */,
 			);
@@ -279,6 +302,7 @@
 				276863D81E8ACE0F006C8483 /* JSON.swift in Sources */,
 				276863DC1E8AD187006C8483 /* RallyError.swift in Sources */,
 				276863D61E8ACD3B006C8483 /* SignSerialization.swift in Sources */,
+				276863E01E8AD22F006C8483 /* SignRepository.swift in Sources */,
 				276863A31E870824006C8483 /* AppDelegate.swift in Sources */,
 				276863D41E8ACCE0006C8483 /* Sign.swift in Sources */,
 			);

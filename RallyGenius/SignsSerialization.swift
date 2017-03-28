@@ -14,7 +14,7 @@ final class SignsSerialization {
         case signs
     }
     
-    private static let rootPath = Bundle.main.url(forResource: "signs", withExtension: "json")
+    private static let rootPath = Bundle.main.url(forResource: "rally-genius", withExtension: "json")
     
     static func allSigns() throws -> Array<Sign> {
         guard let rootPath = SignsSerialization.rootPath else {
@@ -31,7 +31,7 @@ final class SignsSerialization {
     
     static func signs(with jsonDictionary: JSONDictionary) throws -> Array<Sign> {
         guard let signs: [JSONDictionary] = jsonDictionary.jsonValue(propertyKey.signs) else {
-            throw Rally.serializationError
+            throw RallyError.serializationError
         }
         
         return try signs.flatMap(SignSerialization.sign(with: ))
