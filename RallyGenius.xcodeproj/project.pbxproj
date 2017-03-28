@@ -16,6 +16,7 @@
 		276863D11E89F3CD006C8483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276863D01E89F3CD006C8483 /* Assets.xcassets */; };
 		276863D41E8ACCE0006C8483 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D31E8ACCE0006C8483 /* Sign.swift */; };
 		276863D61E8ACD3B006C8483 /* SignSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D51E8ACD3B006C8483 /* SignSerialization.swift */; };
+		276863D81E8ACE0F006C8483 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D71E8ACE0F006C8483 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		276863D01E89F3CD006C8483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = RallyGenius/Assets.xcassets; sourceTree = "<group>"; };
 		276863D31E8ACCE0006C8483 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 		276863D51E8ACD3B006C8483 /* SignSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSerialization.swift; sourceTree = "<group>"; };
+		276863D71E8ACE0F006C8483 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		276863A11E870824006C8483 /* RallyGenius */ = {
 			isa = PBXGroup;
 			children = (
+				276863D71E8ACE0F006C8483 /* JSON.swift */,
 				276863A21E870824006C8483 /* AppDelegate.swift */,
 				276863A41E870824006C8483 /* ViewController.swift */,
 				276863A61E870824006C8483 /* Main.storyboard */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276863A51E870824006C8483 /* ViewController.swift in Sources */,
+				276863D81E8ACE0F006C8483 /* JSON.swift in Sources */,
 				276863D61E8ACD3B006C8483 /* SignSerialization.swift in Sources */,
 				276863A31E870824006C8483 /* AppDelegate.swift in Sources */,
 				276863D41E8ACCE0006C8483 /* Sign.swift in Sources */,
