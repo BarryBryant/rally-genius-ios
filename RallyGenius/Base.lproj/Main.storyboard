@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="-2432" y="245"/>
         </scene>
-        <!--Master View Controller-->
+        <!--Rally Genius-->
         <scene sceneID="LGg-Y7-MbZ">
             <objects>
                 <collectionViewController id="34x-vx-Qzh" customClass="MasterViewController" customModule="RallyGenius" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="hk9-to-G5G">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hk9-to-G5G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,7 +47,7 @@
                             <outlet property="delegate" destination="34x-vx-Qzh" id="ted-lx-UJI"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="DJT-t2-wY6"/>
+                    <navigationItem key="navigationItem" title="Rally Genius" id="DJT-t2-wY6"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTQ-h7-YZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

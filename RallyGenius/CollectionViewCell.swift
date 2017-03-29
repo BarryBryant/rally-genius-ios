@@ -13,18 +13,10 @@ final class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var signImage: UIImageView?
     @IBOutlet weak var name: UILabel?
     
-    var sign: Sign? {
-        didSet {
-            if let sign = sign {
-                signImage?.image = UIImage(named: sign.name)
-                name?.text = sign.name
-            }
-        }
-    }
     
     func configure(for sign: Sign) {
-        self.sign = sign
-        self.signImage?.clipsToBounds = true
+        signImage?.image = UIImage(named: sign.name)
+        name?.text = sign.name
     }
     
     override func prepareForReuse() {
