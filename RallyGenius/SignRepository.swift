@@ -23,8 +23,6 @@ final class SignRepository {
     }
     
     public func getAllSigns() -> Array<Sign> {
-        return self.signs.sorted {
-            $0.name < $1.name
-        }
+        return self.signs
     }
 }

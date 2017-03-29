@@ -21,6 +21,10 @@
 		276863DC1E8AD187006C8483 /* RallyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863DB1E8AD187006C8483 /* RallyError.swift */; };
 		276863E01E8AD22F006C8483 /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863DF1E8AD22F006C8483 /* SignRepository.swift */; };
 		276863E21E8AD3B0006C8483 /* rally-genius.json in Resources */ = {isa = PBXBuildFile; fileRef = 276863E11E8AD3B0006C8483 /* rally-genius.json */; };
+		276863E41E8AF2F6006C8483 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863E31E8AF2F6006C8483 /* MasterViewController.swift */; };
+		276863E61E8AF3A9006C8483 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863E51E8AF3A9006C8483 /* CollectionViewCell.swift */; };
+		276863E91E8AFBFB006C8483 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863E81E8AFBFB006C8483 /* DetailViewController.swift */; };
+		276863EB1E8B06EC006C8483 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		276863DB1E8AD187006C8483 /* RallyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RallyError.swift; sourceTree = "<group>"; };
 		276863DF1E8AD22F006C8483 /* SignRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
 		276863E11E8AD3B0006C8483 /* rally-genius.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rally-genius.json"; sourceTree = "<group>"; };
+		276863E31E8AF2F6006C8483 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		276863E51E8AF3A9006C8483 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		276863E81E8AFBFB006C8483 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,10 @@
 				276863AB1E870824006C8483 /* LaunchScreen.storyboard */,
 				276863AE1E870824006C8483 /* Info.plist */,
 				276863DB1E8AD187006C8483 /* RallyError.swift */,
+				276863E31E8AF2F6006C8483 /* MasterViewController.swift */,
+				276863E51E8AF3A9006C8483 /* CollectionViewCell.swift */,
+				276863E81E8AFBFB006C8483 /* DetailViewController.swift */,
+				276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */,
 			);
 			path = RallyGenius;
 			sourceTree = "<group>";
@@ -273,6 +285,7 @@
 				276863E21E8AD3B0006C8483 /* rally-genius.json in Resources */,
 				276863D11E89F3CD006C8483 /* Assets.xcassets in Resources */,
 				276863A81E870824006C8483 /* Main.storyboard in Resources */,
+				276863EB1E8B06EC006C8483 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,11 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276863E91E8AFBFB006C8483 /* DetailViewController.swift in Sources */,
+				276863E61E8AF3A9006C8483 /* CollectionViewCell.swift in Sources */,
 				276863A51E870824006C8483 /* ViewController.swift in Sources */,
 				276863DA1E8AD040006C8483 /* SignsSerialization.swift in Sources */,
 				276863D81E8ACE0F006C8483 /* JSON.swift in Sources */,
 				276863DC1E8AD187006C8483 /* RallyError.swift in Sources */,
 				276863D61E8ACD3B006C8483 /* SignSerialization.swift in Sources */,
+				276863E41E8AF2F6006C8483 /* MasterViewController.swift in Sources */,
 				276863E01E8AD22F006C8483 /* SignRepository.swift in Sources */,
 				276863A31E870824006C8483 /* AppDelegate.swift in Sources */,
 				276863D41E8ACCE0006C8483 /* Sign.swift in Sources */,

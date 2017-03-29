@@ -1,31 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EZg-zW-dIN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Gia-UW-RDf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="M1c-Qz-dwO">
+        <!--Navigation Controller-->
+        <scene sceneID="fSv-Dl-CGK">
             <objects>
-                <viewController id="EZg-zW-dIN" customClass="ViewController" customModule="RallyGenius" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="anJ-IO-vIl"/>
-                        <viewControllerLayoutGuide type="bottom" id="pNm-lR-ZRv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xeI-77-TW8">
+                <navigationController id="Gia-UW-RDf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RfK-ui-snS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="34x-vx-Qzh" kind="relationship" relationship="rootViewController" id="eKB-iA-WgG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goN-x6-TYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2432" y="245"/>
+        </scene>
+        <!--Master View Controller-->
+        <scene sceneID="LGg-Y7-MbZ">
+            <objects>
+                <collectionViewController id="34x-vx-Qzh" customClass="MasterViewController" customModule="RallyGenius" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="hk9-to-G5G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XcQ-0k-SiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="7ji-pp-icu">
+                            <size key="itemSize" width="200" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="34x-vx-Qzh" id="gI3-fc-6pu"/>
+                            <outlet property="delegate" destination="34x-vx-Qzh" id="ted-lx-UJI"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="DJT-t2-wY6"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTQ-h7-YZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-382" y="10"/>
+            <point key="canvasLocation" x="-974" y="246"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="H74-RD-79B">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="rdz-HB-OdA" customClass="DetailViewController" customModule="RallyGenius" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cqs-pW-V9C"/>
+                        <viewControllerLayoutGuide type="bottom" id="WAI-Gj-cvn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cHp-t9-VbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZeE-hR-Zt7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZeE-hR-Zt7" secondAttribute="height" multiplier="22:17" id="Krm-HG-Qck"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the boy bought the basketball and it seems like this should at least make it to a couple of lines to prove" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXM-En-JSm">
+                                <rect key="frame" x="16" y="310" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZeE-hR-Zt7" firstAttribute="leading" secondItem="cHp-t9-VbJ" secondAttribute="leading" id="FOd-ys-O45"/>
+                            <constraint firstAttribute="trailing" secondItem="ZeE-hR-Zt7" secondAttribute="trailing" id="RDe-gv-lua"/>
+                            <constraint firstItem="WXM-En-JSm" firstAttribute="top" secondItem="ZeE-hR-Zt7" secondAttribute="bottom" id="X0r-I5-hea"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WXM-En-JSm" secondAttribute="trailing" id="dHd-bH-n9M"/>
+                            <constraint firstItem="ZeE-hR-Zt7" firstAttribute="top" secondItem="cqs-pW-V9C" secondAttribute="bottom" id="gdf-N5-4Yt"/>
+                            <constraint firstItem="WXM-En-JSm" firstAttribute="leading" secondItem="cHp-t9-VbJ" secondAttribute="leadingMargin" id="nTX-e2-G9y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="WXM-En-JSm" id="eiP-BS-JVD"/>
+                        <outlet property="signImage" destination="ZeE-hR-Zt7" id="eaB-E3-Gdr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zS1-Ge-227" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="245"/>
         </scene>
     </scenes>
 </document>
