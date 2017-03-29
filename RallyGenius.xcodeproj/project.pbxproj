@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		275C7F0E1E8BFB0D007EB980 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */; };
+		275C7F111E8C24ED007EB980 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */; };
 		276863A31E870824006C8483 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863A21E870824006C8483 /* AppDelegate.swift */; };
 		276863A51E870824006C8483 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863A41E870824006C8483 /* ViewController.swift */; };
 		276863A81E870824006C8483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276863A61E870824006C8483 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		2768639F1E870824006C8483 /* RallyGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RallyGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276863A21E870824006C8483 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		276863A41E870824006C8483 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				276863E81E8AFBFB006C8483 /* DetailViewController.swift */,
 				276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */,
 				275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */,
+				275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */,
 			);
 			path = RallyGenius;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				276863DC1E8AD187006C8483 /* RallyError.swift in Sources */,
 				276863D61E8ACD3B006C8483 /* SignSerialization.swift in Sources */,
 				275C7F0E1E8BFB0D007EB980 /* SectionHeaderView.swift in Sources */,
+				275C7F111E8C24ED007EB980 /* UIKitExtensions.swift in Sources */,
 				276863E41E8AF2F6006C8483 /* MasterViewController.swift in Sources */,
 				276863E01E8AD22F006C8483 /* SignRepository.swift in Sources */,
 				276863A31E870824006C8483 /* AppDelegate.swift in Sources */,

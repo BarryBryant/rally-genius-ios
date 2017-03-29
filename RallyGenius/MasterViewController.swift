@@ -10,8 +10,12 @@ import UIKit
 
 final class MasterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var collectionView: UICollectionView?
-    @IBOutlet weak var backButton: UIButton?
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var placeholder: UIView!
+    
+    fileprivate var imageForAnimatingCell: UIImageView!
+    fileprivate var indexPathAnimatedFrom: IndexPath!
     
     fileprivate var repo = SignRepository()
     
@@ -23,7 +27,11 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
         collectionView?.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        omegaBombLoadAnimation()
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
@@ -48,7 +56,22 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let placeholder = placeholder, let attributes = collectionView.layoutAttributesForItem(at: indexPath) else { return }
+        
         let sign = repo.getSignForIndexPath(indexPath)
+        indexPathAnimatedFrom = indexPath
+        
+        //generate the view to animate relative to the superview
+        let frameInSuperView = collectionView.convert(attributes.frame, to: self.view)
+        imageForAnimatingCell = UIImageView(frame: frameInSuperView)
+        imageForAnimatingCell.image = UIImage(named: sign.name)
+        
+        self.view.sharedElementTransition(from: imageForAnimatingCell, to: placeholder)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.backButton?.alpha = 1.0
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.configure(with: sign)
@@ -60,5 +83,24 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
         let height = width * 17 / 22
         return CGSize(width: width, height: height)
     }
-
+    
+    fileprivate func omegaBombLoadAnimation() {
+        UIView.animate(withDuration: 0.3) { self.backButton.alpha = 0.0 }
+        guard let placeholderImage = imageForAnimatingCell, let indexPathAnimatedFrom = indexPathAnimatedFrom, let attributes = collectionView.layoutAttributesForItem(at: indexPathAnimatedFrom) else { return }
+        let frameInSuperView = collectionView.convert(attributes.frame, to: self.view)
+        let centerX = frameInSuperView.origin.x + (frameInSuperView.size.width / 2)
+        let centerY = frameInSuperView.origin.y + (frameInSuperView.size.height / 2)
+        let scaleX = attributes.frame.width / placeholderImage.frame.width
+        let scaleY = attributes.frame.height / placeholderImage.frame.height
+        UIView.animate(withDuration: 0.3, animations: {
+            self.imageForAnimatingCell.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
+            self.imageForAnimatingCell.center = CGPoint(x: centerX, y: centerY)
+            self.imageForAnimatingCell.alpha = 0.0
+        }, completion: { success in
+            self.imageForAnimatingCell.removeFromSuperview()
+            self.imageForAnimatingCell = nil
+        })
+        
+    }
+    
 }
