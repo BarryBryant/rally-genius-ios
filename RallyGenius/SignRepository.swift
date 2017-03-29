@@ -25,4 +25,16 @@ final class SignRepository {
     public func getAllSigns() -> Array<Sign> {
         return self.signs
     }
+    
+    public func getSignsForRallyClass(_ rallyClass: RallyClass) -> Array<Sign> {
+        return self.signs.filter { $0.getClass() == rallyClass }
+    }
+    
+    public func getSignForIndexPath(_ indexPath: IndexPath) -> Sign {
+        let rallyClass = RallyClass(rawValue: indexPath.section)
+        let signs = getSignsForRallyClass(rallyClass)
+        let sign = signs[indexPath.item]
+        return sign
+    }
+    
 }

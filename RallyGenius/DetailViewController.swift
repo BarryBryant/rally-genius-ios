@@ -24,4 +24,8 @@ final class DetailViewController: UIViewController {
     func configure(with sign: Sign) {
         self.sign = sign
     }
+    
+    @IBAction func didPressBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

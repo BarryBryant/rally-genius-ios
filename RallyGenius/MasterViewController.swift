@@ -8,42 +8,51 @@
 
 import UIKit
 
-final class MasterViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+final class MasterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet weak var collectionView: UICollectionView?
+    @IBOutlet weak var backButton: UIButton?
     
     fileprivate var repo = SignRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
         let nib = UINib(nibName: "CollectionViewCell", bundle: Bundle(for: CollectionViewCell.self))
         collectionView?.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
     }
     
-    
-}
 
-extension MasterViewController {
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 4
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return repo.getAllSigns().count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let rallyClass = RallyClass(rawValue: section)
+        return repo.getSignsForRallyClass(rallyClass).count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeaderView
+        let title = RallyClass(rawValue: indexPath.section).name
+        sectionHeaderView.title = title
+        return sectionHeaderView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        let sign = repo.getAllSigns()[indexPath.item]
+        let sign = repo.getSignForIndexPath(indexPath)
         cell.configure(for: sign)
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sign = repo.getAllSigns()[indexPath.item]
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sign = repo.getSignForIndexPath(indexPath)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.configure(with: sign)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        present(detailViewController, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -51,6 +60,5 @@ extension MasterViewController {
         let height = width * 17 / 22
         return CGSize(width: width, height: height)
     }
-    
-    
+
 }
