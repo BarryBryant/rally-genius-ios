@@ -17,7 +17,7 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
     fileprivate var imageForAnimatingCell: UIImageView!
     fileprivate var indexPathAnimatedFrom: IndexPath!
     
-    fileprivate var repo = SignRepository()
+    fileprivate var repo: SignRepository = JSONSignRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +27,13 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
         collectionView?.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        omegaBombLoadAnimation()
-    }
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let rallyClass = RallyClass(rawValue: section)
-        return repo.getSignsForRallyClass(rallyClass).count
+        return repo.getSignsFor(rallyClass: rallyClass).count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -50,15 +45,43 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        let sign = repo.getSignForIndexPath(indexPath)
+        let sign = repo.getSignFor(indexPath: indexPath)
         cell.configure(for: sign)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        animateSelectedItem(collectionView, didSelectItemAt: indexPath)
+        let sign = repo.getSignFor(indexPath: indexPath)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailViewController.configure(with: sign)
+        present(detailViewController, animated: true, completion: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width / 3.0
+        let height = width * 17 / 22
+        return CGSize(width: width, height: height)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.alpha = 1.0
+        omegaBombLoadAnimation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIView.animate(withDuration: 0.3) {
+            self.collectionView.alpha = 0.0
+        }
+    }
+    
+    fileprivate func animateSelectedItem(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let placeholder = placeholder, let attributes = collectionView.layoutAttributesForItem(at: indexPath) else { return }
         
-        let sign = repo.getSignForIndexPath(indexPath)
+        let sign = repo.getSignFor(indexPath: indexPath)
         indexPathAnimatedFrom = indexPath
         
         //generate the view to animate relative to the superview
@@ -71,17 +94,6 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
         UIView.animate(withDuration: 0.3) {
             self.backButton?.alpha = 1.0
         }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailViewController.configure(with: sign)
-        present(detailViewController, animated: true, completion: nil)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width / 3.0
-        let height = width * 17 / 22
-        return CGSize(width: width, height: height)
     }
     
     fileprivate func omegaBombLoadAnimation() {

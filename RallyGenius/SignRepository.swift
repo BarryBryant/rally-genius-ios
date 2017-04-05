@@ -8,7 +8,14 @@
 
 import Foundation
 
-final class SignRepository {
+protocol SignRepository {
+    func getSign(number: Int) -> Sign
+    func getAllSigns() -> Array<Sign>
+    func getSignsFor(rallyClass: RallyClass) -> Array<Sign>
+    func getSignFor(indexPath: IndexPath) -> Sign
+}
+
+final class JSONSignRepository: SignRepository {
     
     private var signs: Array<Sign>!
     
@@ -22,17 +29,24 @@ final class SignRepository {
         }
     }
     
+    public func getSign(number: Int) -> Sign {
+        let stringNumber = "\(number)"
+        let sign = signs.filter { $0.name == stringNumber }.first
+        if let sign = sign { return sign }
+        return Sign(name: "Error", description: "Error")
+    }
+    
     public func getAllSigns() -> Array<Sign> {
         return self.signs
     }
     
-    public func getSignsForRallyClass(_ rallyClass: RallyClass) -> Array<Sign> {
+    public func getSignsFor(rallyClass: RallyClass) -> Array<Sign> {
         return self.signs.filter { $0.getClass() == rallyClass }
     }
     
-    public func getSignForIndexPath(_ indexPath: IndexPath) -> Sign {
+    public func getSignFor(indexPath: IndexPath) -> Sign {
         let rallyClass = RallyClass(rawValue: indexPath.section)
-        let signs = getSignsForRallyClass(rallyClass)
+        let signs = getSignsFor(rallyClass: rallyClass)
         let sign = signs[indexPath.item]
         return sign
     }

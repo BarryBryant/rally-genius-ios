@@ -13,6 +13,7 @@ enum RallyClass: Int {
     case intermediateAndAdvanced = 1
     case excellent = 2
     case master = 3
+    case error = 999
     
     var name: String {
         switch self {
@@ -24,6 +25,8 @@ enum RallyClass: Int {
             return "Excellent"
         case .master:
             return "Master"
+        case .error:
+            return "Error initializing sign"
         }
     }
     
@@ -38,7 +41,7 @@ enum RallyClass: Int {
         case 3:
             self = .master
         default:
-            self = .novice
+            self = .error
             
         }
     }
