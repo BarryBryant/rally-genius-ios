@@ -11,11 +11,12 @@ import Foundation
 final class SignSerialization {
     
     private enum propertyKey: String, JSONPropertyKey {
-        case name
+        case number
         case description
     }
     
     static func sign(with jsonDictionary: JSONDictionary) throws -> Sign {
-        return Sign(name: jsonDictionary.jsonValue(propertyKey.name)!, description: jsonDictionary.jsonValue(propertyKey.description)!)
+        guard let signNumber: Int = jsonDictionary.jsonValue(propertyKey.number) else { throw RallyError.invalidDataError }
+        return Sign(signNumber: signNumber, description: jsonDictionary.jsonValue(propertyKey.description)!)
     }
 }

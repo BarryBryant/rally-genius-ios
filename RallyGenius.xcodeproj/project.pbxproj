@@ -10,10 +10,10 @@
 		275C7F0E1E8BFB0D007EB980 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */; };
 		275C7F111E8C24ED007EB980 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */; };
 		275C7F8E1E93DA96007EB980 /* SignDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F8D1E93DA96007EB980 /* SignDetailView.swift */; };
+		275C7F931E952491007EB980 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F921E952491007EB980 /* CardView.swift */; };
 		276863A31E870824006C8483 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863A21E870824006C8483 /* AppDelegate.swift */; };
 		276863A81E870824006C8483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276863A61E870824006C8483 /* Main.storyboard */; };
 		276863AD1E870824006C8483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276863AB1E870824006C8483 /* LaunchScreen.storyboard */; };
-		276863B81E870824006C8483 /* RallyGeniusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863B71E870824006C8483 /* RallyGeniusTests.swift */; };
 		276863C31E870824006C8483 /* RallyGeniusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863C21E870824006C8483 /* RallyGeniusUITests.swift */; };
 		276863D11E89F3CD006C8483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276863D01E89F3CD006C8483 /* Assets.xcassets */; };
 		276863D41E8ACCE0006C8483 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D31E8ACCE0006C8483 /* Sign.swift */; };
@@ -27,6 +27,8 @@
 		276863E61E8AF3A9006C8483 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863E51E8AF3A9006C8483 /* CollectionViewCell.swift */; };
 		276863E91E8AFBFB006C8483 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863E81E8AFBFB006C8483 /* DetailViewController.swift */; };
 		276863EB1E8B06EC006C8483 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */; };
+		277C6AC91E9546C7005ABFD2 /* SignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C6AC81E9546C7005ABFD2 /* SignTests.swift */; };
+		277C6ACA1E9546FB005ABFD2 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D31E8ACCE0006C8483 /* Sign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,13 +52,13 @@
 		275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		275C7F8D1E93DA96007EB980 /* SignDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDetailView.swift; sourceTree = "<group>"; };
+		275C7F921E952491007EB980 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2768639F1E870824006C8483 /* RallyGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RallyGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276863A21E870824006C8483 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		276863A71E870824006C8483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		276863AC1E870824006C8483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		276863AE1E870824006C8483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276863B31E870824006C8483 /* RallyGeniusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RallyGeniusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		276863B71E870824006C8483 /* RallyGeniusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RallyGeniusTests.swift; sourceTree = "<group>"; };
 		276863B91E870824006C8483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276863BE1E870824006C8483 /* RallyGeniusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RallyGeniusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276863C21E870824006C8483 /* RallyGeniusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RallyGeniusUITests.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		276863E51E8AF3A9006C8483 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		276863E81E8AFBFB006C8483 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		277C6AC81E9546C7005ABFD2 /* SignTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,21 +127,12 @@
 		276863A11E870824006C8483 /* RallyGenius */ = {
 			isa = PBXGroup;
 			children = (
-				276863E11E8AD3B0006C8483 /* rally-genius.json */,
+				277C6AC71E9545BD005ABFD2 /* Controller */,
+				277C6AC61E9545A0005ABFD2 /* View */,
 				276863DE1E8AD215006C8483 /* Model */,
 				276863DD1E8AD202006C8483 /* Data */,
 				276863A21E870824006C8483 /* AppDelegate.swift */,
-				276863A61E870824006C8483 /* Main.storyboard */,
-				276863AB1E870824006C8483 /* LaunchScreen.storyboard */,
 				276863AE1E870824006C8483 /* Info.plist */,
-				276863DB1E8AD187006C8483 /* RallyError.swift */,
-				276863E31E8AF2F6006C8483 /* MasterViewController.swift */,
-				276863E51E8AF3A9006C8483 /* CollectionViewCell.swift */,
-				276863E81E8AFBFB006C8483 /* DetailViewController.swift */,
-				276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */,
-				275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */,
-				275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */,
-				275C7F8D1E93DA96007EB980 /* SignDetailView.swift */,
 			);
 			path = RallyGenius;
 			sourceTree = "<group>";
@@ -146,8 +140,8 @@
 		276863B61E870824006C8483 /* RallyGeniusTests */ = {
 			isa = PBXGroup;
 			children = (
-				276863B71E870824006C8483 /* RallyGeniusTests.swift */,
 				276863B91E870824006C8483 /* Info.plist */,
+				277C6AC81E9546C7005ABFD2 /* SignTests.swift */,
 			);
 			path = RallyGeniusTests;
 			sourceTree = "<group>";
@@ -164,6 +158,7 @@
 		276863DD1E8AD202006C8483 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				276863E11E8AD3B0006C8483 /* rally-genius.json */,
 				276863D91E8AD040006C8483 /* SignsSerialization.swift */,
 				276863D51E8ACD3B006C8483 /* SignSerialization.swift */,
 				276863D71E8ACE0F006C8483 /* JSON.swift */,
@@ -174,10 +169,35 @@
 		276863DE1E8AD215006C8483 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				276863DB1E8AD187006C8483 /* RallyError.swift */,
 				276863D31E8ACCE0006C8483 /* Sign.swift */,
 				276863DF1E8AD22F006C8483 /* SignRepository.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		277C6AC61E9545A0005ABFD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				275C7F921E952491007EB980 /* CardView.swift */,
+				276863E51E8AF3A9006C8483 /* CollectionViewCell.swift */,
+				276863EA1E8B06EC006C8483 /* CollectionViewCell.xib */,
+				276863AB1E870824006C8483 /* LaunchScreen.storyboard */,
+				276863A61E870824006C8483 /* Main.storyboard */,
+				275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */,
+				275C7F8D1E93DA96007EB980 /* SignDetailView.swift */,
+				275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		277C6AC71E9545BD005ABFD2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				276863E81E8AFBFB006C8483 /* DetailViewController.swift */,
+				276863E31E8AF2F6006C8483 /* MasterViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275C7F931E952491007EB980 /* CardView.swift in Sources */,
 				276863E91E8AFBFB006C8483 /* DetailViewController.swift in Sources */,
 				276863E61E8AF3A9006C8483 /* CollectionViewCell.swift in Sources */,
 				275C7F8E1E93DA96007EB980 /* SignDetailView.swift in Sources */,
@@ -336,7 +357,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276863B81E870824006C8483 /* RallyGeniusTests.swift in Sources */,
+				277C6AC91E9546C7005ABFD2 /* SignTests.swift in Sources */,
+				277C6ACA1E9546FB005ABFD2 /* Sign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

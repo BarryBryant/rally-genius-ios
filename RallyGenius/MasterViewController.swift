@@ -27,6 +27,13 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
         collectionView?.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil, completion: {_ in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+        })        
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
@@ -60,7 +67,7 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width / 3.0
+        let width = (self.view.frame.width / 3.0) - 2
         let height = width * 17 / 22
         return CGSize(width: width, height: height)
     }
@@ -87,8 +94,7 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
         //generate the view to animate relative to the superview
         let frameInSuperView = collectionView.convert(attributes.frame, to: self.view)
         imageForAnimatingCell = UIImageView(frame: frameInSuperView)
-        imageForAnimatingCell.image = UIImage(named: sign.name)
-        
+        imageForAnimatingCell.image = UIImage(named: "\(sign.number)")
         self.view.sharedElementTransition(from: imageForAnimatingCell, to: placeholder)
         
         UIView.animate(withDuration: 0.3) {
@@ -99,11 +105,13 @@ final class MasterViewController: UIViewController, UICollectionViewDataSource, 
     fileprivate func omegaBombLoadAnimation() {
         UIView.animate(withDuration: 0.3) { self.backButton.alpha = 0.0 }
         guard let placeholderImage = imageForAnimatingCell, let indexPathAnimatedFrom = indexPathAnimatedFrom, let attributes = collectionView.layoutAttributesForItem(at: indexPathAnimatedFrom) else { return }
+        
         let frameInSuperView = collectionView.convert(attributes.frame, to: self.view)
         let centerX = frameInSuperView.origin.x + (frameInSuperView.size.width / 2)
         let centerY = frameInSuperView.origin.y + (frameInSuperView.size.height / 2)
         let scaleX = attributes.frame.width / placeholderImage.frame.width
         let scaleY = attributes.frame.height / placeholderImage.frame.height
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.imageForAnimatingCell.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
             self.imageForAnimatingCell.center = CGPoint(x: centerX, y: centerY)

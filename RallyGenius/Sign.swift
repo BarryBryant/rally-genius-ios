@@ -48,12 +48,17 @@ enum RallyClass: Int {
 }
 
 struct Sign {
-    let name: String
+    let number: Int
     let description: String
     
+    init(signNumber: Int, description: String) {
+        self.number = signNumber
+        self.description = description
+    }
+    
     func getClass() -> RallyClass {
-        let signNumber = Int(name)
-        let tier = signNumber! / 100
-        return RallyClass(rawValue: tier)
+        if self.number > 0 {
+            return RallyClass(rawValue: self.number / 100)
+        } else { return .error }
     }
 }

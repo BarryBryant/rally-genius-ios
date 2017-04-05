@@ -30,10 +30,10 @@ final class JSONSignRepository: SignRepository {
     }
     
     public func getSign(number: Int) -> Sign {
-        let stringNumber = "\(number)"
-        let sign = signs.filter { $0.name == stringNumber }.first
+        let sign = signs.filter { $0.number == number }.first
         if let sign = sign { return sign }
-        return Sign(name: "Error", description: "Error")
+        print("Invalid sign number requested from repository")
+        return Sign(signNumber: -1, description: "Error")
     }
     
     public func getAllSigns() -> Array<Sign> {

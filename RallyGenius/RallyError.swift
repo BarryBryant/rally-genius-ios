@@ -8,14 +8,17 @@
 
 import Foundation
 
-public enum RallyError: Error, CustomStringConvertible {
+public enum RallyError: LocalizedError {
     
     case serializationError
+    case invalidDataError
     
-    public var description: String {
+    public var errorDescription: String? {
         switch self {
         case .serializationError:
-            return NSLocalizedString("An error occured during serialization.", comment: "Something went wrong serializing JSON")
+            return "An error occured during serialization."
+        case .invalidDataError:
+            return "The data being parsed was invalid"
         }
     }
 }

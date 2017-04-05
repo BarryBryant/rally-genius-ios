@@ -14,6 +14,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak var actionBar: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var detailView: SignDetailView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     
     var sign: Sign!
@@ -26,6 +27,7 @@ final class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         detailView.viewWillAppear()
         actionBar.alpha = 0.0
+        self.view.backgroundColor = UIColor.clear
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,17 +35,20 @@ final class DetailViewController: UIViewController {
         detailView.viewDidAppear()
         actionBar.alpha = 1.0
         backButton.alpha = 1.0
+        self.view.backgroundColor = UIColor.white
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         detailView.viewWillDissapear()
         actionBar.alpha = 0.0
+        self.view.backgroundColor = UIColor.clear
     }
 
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        scrollView.contentSize = CGSize(width: detailView.frame.width, height: detailView.frame.height)
     }
     
     func configure(with sign: Sign) {

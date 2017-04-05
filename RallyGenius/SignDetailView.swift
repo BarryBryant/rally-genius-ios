@@ -14,18 +14,17 @@ final class SignDetailView: UIView {
     @IBOutlet var signImage: UIImageView!
     @IBOutlet var signNameLabel: UILabel!
     @IBOutlet var signClassLabel: UILabel!
-    @IBOutlet var signDescriptionText: UITextView!
+    @IBOutlet var signDescriptionText: UILabel!
     
     func configure(with sign: Sign) {
-        signImage.image = UIImage(named: sign.name)
-        signNameLabel.text = "Sign \(sign.name)"
+        signImage.image = UIImage(named: "\(sign.number)")
+        signNameLabel.text = "Sign \(sign.number)"
         signClassLabel.text = sign.getClass().name
         signDescriptionText.text = sign.description
     }
     
     func viewWillAppear() {
         signImage.alpha = 0.0
-        signDescriptionText.setContentOffset(CGPoint.zero, animated: false)
     }
     
     func viewDidAppear() {

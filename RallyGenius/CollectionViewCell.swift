@@ -15,8 +15,8 @@ final class CollectionViewCell: UICollectionViewCell {
     
     
     func configure(for sign: Sign) {
-        signImage?.image = UIImage(named: sign.name)
-        name?.text = sign.name
+        signImage?.image = UIImage(named: "\(sign.number)")
+        name?.text = "\(sign.number)"
     }
     
     override func prepareForReuse() {
