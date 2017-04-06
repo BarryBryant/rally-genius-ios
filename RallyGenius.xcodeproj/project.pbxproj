@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273C7ED51E96945C00F9D946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273C7ED41E96945C00F9D946 /* Assets.xcassets */; };
 		275C7F0E1E8BFB0D007EB980 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */; };
 		275C7F111E8C24ED007EB980 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */; };
 		275C7F8E1E93DA96007EB980 /* SignDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C7F8D1E93DA96007EB980 /* SignDetailView.swift */; };
@@ -15,7 +16,6 @@
 		276863A81E870824006C8483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276863A61E870824006C8483 /* Main.storyboard */; };
 		276863AD1E870824006C8483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276863AB1E870824006C8483 /* LaunchScreen.storyboard */; };
 		276863C31E870824006C8483 /* RallyGeniusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863C21E870824006C8483 /* RallyGeniusUITests.swift */; };
-		276863D11E89F3CD006C8483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276863D01E89F3CD006C8483 /* Assets.xcassets */; };
 		276863D41E8ACCE0006C8483 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D31E8ACCE0006C8483 /* Sign.swift */; };
 		276863D61E8ACD3B006C8483 /* SignSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D51E8ACD3B006C8483 /* SignSerialization.swift */; };
 		276863D81E8ACE0F006C8483 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276863D71E8ACE0F006C8483 /* JSON.swift */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		273C7ED41E96945C00F9D946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = RallyGenius/Assets.xcassets; sourceTree = "<group>"; };
 		275C7F0D1E8BFB0D007EB980 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		275C7F101E8C24ED007EB980 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		275C7F8D1E93DA96007EB980 /* SignDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDetailView.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		276863BE1E870824006C8483 /* RallyGeniusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RallyGeniusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276863C21E870824006C8483 /* RallyGeniusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RallyGeniusUITests.swift; sourceTree = "<group>"; };
 		276863C41E870824006C8483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		276863D01E89F3CD006C8483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = RallyGenius/Assets.xcassets; sourceTree = "<group>"; };
 		276863D31E8ACCE0006C8483 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 		276863D51E8ACD3B006C8483 /* SignSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSerialization.swift; sourceTree = "<group>"; };
 		276863D71E8ACE0F006C8483 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		276863961E870824006C8483 = {
 			isa = PBXGroup;
 			children = (
-				276863D01E89F3CD006C8483 /* Assets.xcassets */,
+				273C7ED41E96945C00F9D946 /* Assets.xcassets */,
 				276863A11E870824006C8483 /* RallyGenius */,
 				276863B61E870824006C8483 /* RallyGeniusTests */,
 				276863C11E870824006C8483 /* RallyGeniusUITests */,
@@ -309,9 +309,9 @@
 			files = (
 				276863AD1E870824006C8483 /* LaunchScreen.storyboard in Resources */,
 				276863E21E8AD3B0006C8483 /* rally-genius.json in Resources */,
-				276863D11E89F3CD006C8483 /* Assets.xcassets in Resources */,
 				276863A81E870824006C8483 /* Main.storyboard in Resources */,
 				276863EB1E8B06EC006C8483 /* CollectionViewCell.xib in Resources */,
+				273C7ED51E96945C00F9D946 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
